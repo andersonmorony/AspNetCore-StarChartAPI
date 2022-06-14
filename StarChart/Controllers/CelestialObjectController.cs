@@ -29,7 +29,7 @@ namespace StarChart.Controllers
             celestialObject.Satellites = _context.CelestialObjects.Where(e => e.OrbitedObjectId == Id).ToList();
             return Ok(celestialObject);
         }
-        [HttpGet("name")]
+        [HttpGet("{name}")]
         public IActionResult GetByName(string name)
         {
             var celestialObjects = _context.CelestialObjects.Where(e => e.Name == name).ToList();
